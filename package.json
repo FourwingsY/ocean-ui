@@ -8,7 +8,8 @@
   "license": "MIT",
   "scripts": {
     "start": "start-storybook -p 9001 -c .storybook",
-    "test": "jest --config config/jest.config.js --no-cache"
+    "test": "jest --config config/jest.config.js --no-cache",
+    "docs": "build-storybook -c .storybook -o docs",
   },
   "dependencies": {
     "@babel/polyfill": "^7.0.0-beta.44",
