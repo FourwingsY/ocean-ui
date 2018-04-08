@@ -1,12 +1,12 @@
-import React from "react";
-import { storiesOf } from "@storybook/react";
-import { action } from "@storybook/addon-actions";
-import { withKnobs, text, boolean } from "@storybook/addon-knobs/react";
-import { withState } from "@dump247/storybook-state";
+import React from 'react';
+import { storiesOf } from '@storybook/react';
+import { action } from '@storybook/addon-actions';
+import { withKnobs, text, boolean } from '@storybook/addon-knobs/react';
+import { withState } from '@dump247/storybook-state';
 
-import Dropdown from "@src/components/Dropdown";
+import Dropdown from '../components/Dropdown';
 
-import Documentation from "./Documentation";
+import Documentation from './Documentation';
 
 const DropdownProps = `\
   type Option = object
@@ -119,18 +119,18 @@ const noValidOptionUsage = `\
 `;
 
 const Options = [
-  { label: "Option 0", value: 0 },
-  { label: "Option 1", value: 1 },
-  { label: "Option 2", value: 2 },
-  { label: "Option 3", value: 3 },
-  { label: "Option 4", value: 4 }
+  { label: 'Option 0', value: 0 },
+  { label: 'Option 1', value: 1 },
+  { label: 'Option 2', value: 2 },
+  { label: 'Option 3', value: 3 },
+  { label: 'Option 4', value: 4 }
 ];
 
 const exampleOptionRenderer = (option, labelKey) => {
   if (!option) {
     return null;
   }
-  const kanjiEmoji = ["🐭", "🐮", "🐯", "🐰", "🐲"];
+  const kanjiEmoji = ['🐭', '🐮', '🐯', '🐰', '🐲'];
   return (
     <span>
       {kanjiEmoji[option.value]} {option[labelKey]}
@@ -141,7 +141,7 @@ const exampleValueRenderer = option => {
   if (!option) {
     return null;
   }
-  const kanjiEmoji = ["🐭", "🐮", "🐯", "🐰", "🐲"];
+  const kanjiEmoji = ['🐭', '🐮', '🐯', '🐰', '🐲'];
   return <span>{kanjiEmoji[option.value]}</span>;
 };
 
@@ -149,10 +149,10 @@ const disableOddOption = option => {
   return option.value % 2 === 1;
 };
 
-storiesOf("Dropdown", module)
+storiesOf('Dropdown', module)
   .addDecorator(withKnobs)
   .add(
-    "default",
+    'default',
     withState({ value: null }, store => (
       <Documentation
         name="Dropdown"
@@ -165,18 +165,18 @@ storiesOf("Dropdown", module)
           value={store.state.value}
           onChange={value => {
             store.set({ value });
-            action("onChange")(value);
+            action('onChange')(value);
           }}
-          label={text("label", "Dropdown")}
-          disabled={boolean("disabled", false)}
-          clearable={boolean("clearable", true)}
-          searchable={boolean("searchable", true)}
+          label={text('label', 'Dropdown')}
+          disabled={boolean('disabled', false)}
+          clearable={boolean('clearable', true)}
+          searchable={boolean('searchable', true)}
         />
       </Documentation>
     ))
   )
   .add(
-    "custom option/value renderer",
+    'custom option/value renderer',
     withState({ value: Options[2] }, store => (
       <Documentation
         name="Dropdown"
@@ -189,12 +189,12 @@ storiesOf("Dropdown", module)
           value={store.state.value}
           onChange={(value: { value: number; label: string }) => {
             store.set({ value });
-            action("onChange")(value);
+            action('onChange')(value);
           }}
-          label={text("label", "Dropdown")}
-          disabled={boolean("disabled", false)}
-          clearable={boolean("clearable", true)}
-          searchable={boolean("searchable", true)}
+          label={text('label', 'Dropdown')}
+          disabled={boolean('disabled', false)}
+          clearable={boolean('clearable', true)}
+          searchable={boolean('searchable', true)}
           optionRenderer={exampleOptionRenderer}
           valueRenderer={exampleValueRenderer}
         />
@@ -202,7 +202,7 @@ storiesOf("Dropdown", module)
     ))
   )
   .add(
-    "disable some options",
+    'disable some options',
     withState({ value: null }, store => (
       <Documentation
         name="Dropdown"
@@ -215,19 +215,19 @@ storiesOf("Dropdown", module)
           value={store.state.value}
           onChange={value => {
             store.set({ value });
-            action("onChange")(value);
+            action('onChange')(value);
           }}
-          label={text("label", "Dropdown")}
-          disabled={boolean("disabled", false)}
-          clearable={boolean("clearable", true)}
-          searchable={boolean("searchable", true)}
+          label={text('label', 'Dropdown')}
+          disabled={boolean('disabled', false)}
+          clearable={boolean('clearable', true)}
+          searchable={boolean('searchable', true)}
           disableOption={disableOddOption}
         />
       </Documentation>
     ))
   )
   .add(
-    "no options available",
+    'no options available',
     withState({ value: null }, store => (
       <Documentation
         name="Dropdown"
@@ -240,15 +240,15 @@ storiesOf("Dropdown", module)
           value={store.state.value}
           onChange={value => {
             store.set({ value });
-            action("onChange")(value);
+            action('onChange')(value);
           }}
-          label={text("label", "Dropdown")}
-          disabled={boolean("disabled", false)}
-          clearable={boolean("clearable", true)}
-          searchable={boolean("searchable", true)}
+          label={text('label', 'Dropdown')}
+          disabled={boolean('disabled', false)}
+          clearable={boolean('clearable', true)}
+          searchable={boolean('searchable', true)}
           noValidOptionMessage={text(
-            "noValidOptionMessage",
-            "use custom message"
+            'noValidOptionMessage',
+            'use custom message'
           )}
         />
       </Documentation>

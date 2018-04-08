@@ -1,6 +1,6 @@
 import styled, { injectGlobal } from 'styled-components';
 
-import D2CodingWoff2 from '@assets/fonts/d2coding-ligature.woff2';
+import D2CodingWoff2 from '../../assets/fonts/d2coding-ligature.woff2';
 
 // Original highlight.js style
 injectGlobal`

@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "target": "ES2015",
+    "module": "commonjs",
+    "allowSyntheticDefaultImports": true,
+    "jsx": "react",
+    "lib": ["dom", "es2017"]
+  },
+  "include": ["../src/**/*.ts*", "../types/*.d.ts"],
+  "exclude": ["../src/stories/*.ts*", "../src/**/*.test.ts*", "../node_modules/**"]
+}

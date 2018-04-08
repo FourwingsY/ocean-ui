@@ -1,20 +1,13 @@
 {
   "compilerOptions": {
     "target": "ES2015",
-
     "module": "esnext",
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
-
-    "baseUrl": "..",
-    "paths": {
-      "@src/*": ["src/*"],
-      "@assets/*": ["assets/*"]
-    },
-
     "jsx": "preserve",
     "experimentalDecorators": true,
-    "lib": ["dom", "es2017"]
+    "lib": ["dom", "es2017"],
+    "baseUrl": "../"
   },
   "include": ["../src/**/*.ts*", "../types/*.d.ts"],
   "exclude": ["../node_modules/**"]

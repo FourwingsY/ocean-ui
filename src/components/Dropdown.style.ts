@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 import AutosizeInput from 'react-input-autosize';
 import { convert } from 'css-color-function';
 
-import { color, border, text, fontSize, background } from '@src/styles/theme';
+import { color, border, text, fontSize, background } from '../styles/theme';
 
 interface DropdownProps {
   focused: boolean;

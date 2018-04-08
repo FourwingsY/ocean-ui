@@ -5,11 +5,13 @@ import React, {
   MouseEvent,
   KeyboardEvent,
   FocusEvent
-} from "react";
-import ReactDOM from "react-dom";
-import cx from "classnames";
+} from 'react';
+import ReactDOM from 'react-dom';
+import cx from 'classnames';
 
-import If from "@src/components/If";
+import If from './If';
+
+import withDefaultProps from '../utils/withDefaultProps';
 
 import {
   StyledDropdown,
@@ -22,7 +24,7 @@ import {
   ErrorMessage,
   Menu,
   Option
-} from "./style";
+} from './Dropdown.style';
 
 type OptionBase<
   K extends {
@@ -39,26 +41,26 @@ export interface Props {
   onChange: (option: OptionData) => void;
   errorMessage?: string;
 
-  onFocus?(e: FocusEvent<any>): void;
-  onBlur?(e: FocusEvent<any>): void;
-  className?: string;
-  valueKey?: string;
-  labelKey?: string;
-  valueRenderer?: (selectedOption: OptionData, labelKey: string) => ReactNode;
-  optionRenderer?: (option: OptionData, labelKey: string) => ReactNode;
-  filterOptions?: (
+  onFocus(e: FocusEvent<any>): void;
+  onBlur(e: FocusEvent<any>): void;
+  className: string;
+  valueKey: string;
+  labelKey: string;
+  valueRenderer: (selectedOption: OptionData, labelKey: string) => ReactNode;
+  optionRenderer: (option: OptionData, labelKey: string) => ReactNode;
+  filterOptions: (
     options: OptionData[],
     inputValue: string,
     labelKey: string
   ) => OptionData[];
-  disableOption?: (option: OptionData) => boolean;
-  label?: string;
-  noValidOptionMessage?: string;
+  disableOption: (option: OptionData) => boolean;
+  label: string;
+  noValidOptionMessage: string;
 
-  disabled?: boolean;
-  clearable?: boolean;
-  searchable?: boolean;
-  autoFocus?: boolean;
+  disabled: boolean;
+  clearable: boolean;
+  searchable: boolean;
+  autoFocus: boolean;
 }
 
 interface State {
@@ -86,40 +88,18 @@ const defaultFilterOptions = (
 ) => {
   let options = givenOptions;
   if (inputValue) {
-    options = options.filter(o => (o[labelKey] || "").indexOf(inputValue) >= 0);
+    options = options.filter(o => (o[labelKey] || '').indexOf(inputValue) >= 0);
   }
   return options;
 };
 
-export default class Dropdown extends Component<Props, State> {
+class Dropdown extends Component<Props, State> {
   private input: HTMLInputElement;
   private menu: HTMLDivElement;
-  private wrapper: HTMLDivElement;
-
-  public static defaultProps = {
-    value: null,
-
-    onFocus: () => {},
-    onBlur: () => {},
-    valueKey: "value",
-    labelKey: "label",
-    valueRenderer: defaultOptionRenderer,
-    optionRenderer: defaultOptionRenderer,
-    filterOptions: defaultFilterOptions,
-    disableOption: option => !option || option.disabled,
-    label: "",
-
-    disabled: false,
-    clearable: true,
-    searchable: true,
-    autoFocus: false,
-
-    noValidOptionMessage: "선택 가능한 옵션이 없습니다"
-  };
 
   public state = {
-    inputFocused: this.props.autoFocus,
-    inputValue: "",
+    inputFocused: this.props.autoFocus || false,
+    inputValue: '',
     focusedOption: this.props.value,
     menuOpened: false
   };
@@ -230,7 +210,7 @@ export default class Dropdown extends Component<Props, State> {
     this.setState(prevState => ({
       ...prevState,
       menuOpened: false,
-      inputValue: ""
+      inputValue: ''
     }));
     this.props.onChange(option);
   };
@@ -241,7 +221,7 @@ export default class Dropdown extends Component<Props, State> {
       ...prevState,
       focusedOption: null,
       menuOpened: false,
-      inputValue: ""
+      inputValue: ''
     }));
     this.props.onChange(this.state.focusedOption);
   };
@@ -252,7 +232,7 @@ export default class Dropdown extends Component<Props, State> {
     this.focusInput();
     this.setState(prevState => ({
       ...prevState,
-      inputValue: ""
+      inputValue: ''
     }));
   };
 
@@ -432,7 +412,7 @@ export default class Dropdown extends Component<Props, State> {
     const disabled = disableOption(option);
     return (
       <Option
-        className={cx("dropdown-option", {
+        className={cx('dropdown-option', {
           focused: option === focusedOption,
           disabled
         })}
@@ -458,7 +438,7 @@ export default class Dropdown extends Component<Props, State> {
     const { menuOpened, inputFocused } = this.state;
     return (
       <StyledDropdown
-        className={cx("dropdown", className)}
+        className={cx('dropdown', className)}
         focused={inputFocused}
         hasValue={Boolean(value)}
       >
@@ -482,3 +462,26 @@ export default class Dropdown extends Component<Props, State> {
     );
   }
 }
+
+const defaultProps: Partial<Props> = {
+  value: null,
+
+  onFocus: () => {},
+  onBlur: () => {},
+  valueKey: 'value',
+  labelKey: 'label',
+  valueRenderer: defaultOptionRenderer,
+  optionRenderer: defaultOptionRenderer,
+  filterOptions: defaultFilterOptions,
+  disableOption: option => !option || option.disabled,
+  label: '',
+
+  disabled: false,
+  clearable: true,
+  searchable: true,
+  autoFocus: false,
+
+  noValidOptionMessage: '선택 가능한 옵션이 없습니다'
+};
+
+export default withDefaultProps(defaultProps)(Dropdown);
