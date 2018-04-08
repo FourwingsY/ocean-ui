@@ -1,0 +1,53 @@
+{
+  "name": "ocean-ui",
+  "version": "0.0.1",
+  "description": "Basic react components",
+  "main": "index.ts",
+  "repository": "https://github.com/FourwingsY/ocean-ui",
+  "author": "YG",
+  "license": "MIT",
+  "scripts": {
+    "start": "start-storybook -p 9001 -c .storybook",
+    "test": "jest --config config/jest.config.js --no-cache"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.0.0-beta.44",
+    "babel-loader": "^8.0.0-beta.2",
+    "css-color-function": "^1.3.3",
+    "react": "^16.3.1",
+    "react-dom": "^16.3.1",
+    "react-input-autosize": "^2.2.1",
+    "styled-components": "^3.2.5"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0-beta.44",
+    "@babel/plugin-transform-modules-commonjs": "^7.0.0-beta.44",
+    "@babel/preset-env": "^7.0.0-beta.44",
+    "@babel/preset-react": "^7.0.0-beta.44",
+    "@babel/preset-stage-0": "^7.0.0-beta.44",
+    "@dump247/storybook-state": "^1.4.0",
+    "@storybook/addon-actions": "^4.0.0-alpha.1",
+    "@storybook/addon-knobs": "^4.0.0-alpha.1",
+    "@storybook/addon-options": "^3.4.0",
+    "@storybook/addon-storyshots": "^4.0.0-alpha.1",
+    "@storybook/addons": "^4.0.0-alpha.1",
+    "@storybook/react": "^4.0.0-alpha.1",
+    "@types/enzyme": "^3.1.9",
+    "@types/jest": "^22.2.2",
+    "@types/react": "^16.3.5",
+    "@types/react-dom": "^16.0.4",
+    "babel-core": "^7.0.0-bridge",
+    "babel-jest": "^22.4.3",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "jest": "^22.4.3",
+    "jest-styled-components": "^5.0.1",
+    "react-highlight": "^0.12.0",
+    "ts-jest": "^22.4.2",
+    "ts-loader": "^4.2.0",
+    "tsconfig-paths-webpack-plugin": "^3.0.3",
+    "typescript": "^2.8.1",
+    "webpack": "^4.5.0",
+    "webpack-dev-server": "^3.1.2"
+  }
+}

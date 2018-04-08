@@ -1,0 +1,858 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Dropdown custom option/value renderer 1`] = `
+.c0 {
+  padding: 20px;
+}
+
+.c0 h1 {
+  margin-bottom: 10px;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.c0 h2 {
+  font-size: 18px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 20px;
+}
+
+.c0 .preview {
+  position: relative;
+  padding: 20px;
+  margin: 20px 0;
+  background: #f8f9fa;
+}
+
+.c0 .preview::before {
+  content: 'Example';
+  position: absolute;
+  top: -5px;
+  left: 0;
+}
+
+.c0 h3 {
+  font-size: 15px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+
+.c0 pre {
+  margin: 10px;
+  margin-bottom: 20px;
+}
+
+.c0 pre code {
+  padding: 20px;
+}
+
+.c1 {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  height: 30px;
+  margin-top: 14px;
+  border-bottom: 1px solid hsl(0,0%,70%);
+  border-bottom: 1px solid hsl(210,60%,54%);
+}
+
+.c1 .c7::before {
+  border-color: hsl(210,60%,54%) transparent transparent transparent;
+}
+
+.c2 {
+  position: relative;
+  cursor: pointer;
+}
+
+.c3 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 11px;
+  line-height: 14px;
+  color: hsl(210,60%,54%);
+  -webkit-transform: translate(0,-100%);
+  -ms-transform: translate(0,-100%);
+  transform: translate(0,-100%);
+  -webkit-transition: -webkit-transform 0.2s linear,line-height 0.2s linear,color 0.2s, font-size 0.1s;
+  -webkit-transition: transform 0.2s linear,line-height 0.2s linear,color 0.2s, font-size 0.1s;
+  transition: transform 0.2s linear,line-height 0.2s linear,color 0.2s, font-size 0.1s;
+}
+
+.c4 {
+  position: absolute;
+  top: 0;
+  left: 5px;
+  line-height: 30px;
+  display: inline-block;
+}
+
+.c5 {
+  width: calc(100% - 40px);
+}
+
+.c5 input {
+  max-width: 100%;
+  height: 30px;
+  padding-left: 5px;
+  border: 0;
+  outline: none;
+  box-sizing: content-box;
+  -webkit-appearance: none;
+  background: none;
+}
+
+.c8 {
+  background: none;
+  border: none;
+  position: absolute;
+  top: 50%;
+  right: 5px;
+  -webkit-transform: translate(0,-50%);
+  -ms-transform: translate(0,-50%);
+  transform: translate(0,-50%);
+  cursor: pointer;
+}
+
+.c8::before {
+  content: '';
+  display: inline-block;
+  border-width: 5px 5px 3px 5px;
+  border-style: solid;
+  border-color: hsl(0,0%,70%) transparent transparent transparent;
+}
+
+.c6 {
+  background: none;
+  border: none;
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  -webkit-transform: translate(0,-50%);
+  -ms-transform: translate(0,-50%);
+  transform: translate(0,-50%);
+  cursor: pointer;
+}
+
+.c6:focus,
+.c6:hover {
+  color: hsl(345,48%,54%);
+}
+
+<div
+  className="c0"
+>
+  <header>
+    <h1>
+      Dropdown
+    </h1>
+    <h2>
+      react-select의 간략화된 컴포넌트.
+    </h2>
+  </header>
+  <div
+    className="preview"
+  >
+    <div
+      className="dropdown c1"
+    >
+      <div
+        className="c2"
+        onKeyDown={[Function]}
+        onMouseDown={[Function]}
+      >
+        <span
+          className="c3"
+        >
+          Dropdown
+        </span>
+        <div
+          className="c4"
+        >
+          <span>
+            🐯
+          </span>
+        </div>
+        <div
+          className="c5"
+          style={
+            Object {
+              "display": "inline-block",
+            }
+          }
+        >
+          <input
+            className={undefined}
+            id={undefined}
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            style={
+              Object {
+                "boxSizing": "content-box",
+                "width": "1px",
+              }
+            }
+            value=""
+          />
+          <div
+            style={
+              Object {
+                "height": 0,
+                "left": 0,
+                "overflow": "scroll",
+                "position": "absolute",
+                "top": 0,
+                "visibility": "hidden",
+                "whiteSpace": "pre",
+              }
+            }
+          >
+            
+          </div>
+        </div>
+        <button
+          className="dropdown-clear c6"
+          onClick={[Function]}
+        >
+          ×
+        </button>
+        <button
+          className="c7 c8"
+          onMouseDown={[Function]}
+          tabIndex={-1}
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    className="detail"
+  >
+    <h3>
+      Usage
+    </h3>
+    <h3>
+      Props interface (Typescript)
+    </h3>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Dropdown default 1`] = `
+.c0 {
+  padding: 20px;
+}
+
+.c0 h1 {
+  margin-bottom: 10px;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.c0 h2 {
+  font-size: 18px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 20px;
+}
+
+.c0 .preview {
+  position: relative;
+  padding: 20px;
+  margin: 20px 0;
+  background: #f8f9fa;
+}
+
+.c0 .preview::before {
+  content: 'Example';
+  position: absolute;
+  top: -5px;
+  left: 0;
+}
+
+.c0 h3 {
+  font-size: 15px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+
+.c0 pre {
+  margin: 10px;
+  margin-bottom: 20px;
+}
+
+.c0 pre code {
+  padding: 20px;
+}
+
+.c1 {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  height: 30px;
+  margin-top: 14px;
+  border-bottom: 1px solid hsl(0,0%,70%);
+}
+
+.c2 {
+  position: relative;
+  cursor: pointer;
+}
+
+.c3 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 11px;
+  line-height: 14px;
+  color: hsl(210,60%,54%);
+  -webkit-transform: translate(0,-100%);
+  -ms-transform: translate(0,-100%);
+  transform: translate(0,-100%);
+  -webkit-transition: -webkit-transform 0.2s linear,line-height 0.2s linear,color 0.2s, font-size 0.1s;
+  -webkit-transition: transform 0.2s linear,line-height 0.2s linear,color 0.2s, font-size 0.1s;
+  transition: transform 0.2s linear,line-height 0.2s linear,color 0.2s, font-size 0.1s;
+  -webkit-transform: translate(5px,0);
+  -ms-transform: translate(5px,0);
+  transform: translate(5px,0);
+  font-size: 14px;
+  line-height: 30px;
+  color: hsl(210,5%,70%);
+}
+
+.c4 {
+  width: calc(100% - 40px);
+}
+
+.c4 input {
+  max-width: 100%;
+  height: 30px;
+  padding-left: 5px;
+  border: 0;
+  outline: none;
+  box-sizing: content-box;
+  -webkit-appearance: none;
+  background: none;
+}
+
+.c5 {
+  background: none;
+  border: none;
+  position: absolute;
+  top: 50%;
+  right: 5px;
+  -webkit-transform: translate(0,-50%);
+  -ms-transform: translate(0,-50%);
+  transform: translate(0,-50%);
+  cursor: pointer;
+}
+
+.c5::before {
+  content: '';
+  display: inline-block;
+  border-width: 5px 5px 3px 5px;
+  border-style: solid;
+  border-color: hsl(0,0%,70%) transparent transparent transparent;
+}
+
+<div
+  className="c0"
+>
+  <header>
+    <h1>
+      Dropdown
+    </h1>
+    <h2>
+      react-select의 간략화된 컴포넌트.
+    </h2>
+  </header>
+  <div
+    className="preview"
+  >
+    <div
+      className="dropdown c1"
+    >
+      <div
+        className="c2"
+        onKeyDown={[Function]}
+        onMouseDown={[Function]}
+      >
+        <span
+          className="c3"
+        >
+          Dropdown
+        </span>
+        <div
+          className="c4"
+          style={
+            Object {
+              "display": "inline-block",
+            }
+          }
+        >
+          <input
+            className={undefined}
+            id={undefined}
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            style={
+              Object {
+                "boxSizing": "content-box",
+                "width": "1px",
+              }
+            }
+            value=""
+          />
+          <div
+            style={
+              Object {
+                "height": 0,
+                "left": 0,
+                "overflow": "scroll",
+                "position": "absolute",
+                "top": 0,
+                "visibility": "hidden",
+                "whiteSpace": "pre",
+              }
+            }
+          >
+            
+          </div>
+        </div>
+        <button
+          className="c5"
+          onMouseDown={[Function]}
+          tabIndex={-1}
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    className="detail"
+  >
+    <h3>
+      Usage
+    </h3>
+    <h3>
+      Props interface (Typescript)
+    </h3>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Dropdown disable some options 1`] = `
+.c0 {
+  padding: 20px;
+}
+
+.c0 h1 {
+  margin-bottom: 10px;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.c0 h2 {
+  font-size: 18px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 20px;
+}
+
+.c0 .preview {
+  position: relative;
+  padding: 20px;
+  margin: 20px 0;
+  background: #f8f9fa;
+}
+
+.c0 .preview::before {
+  content: 'Example';
+  position: absolute;
+  top: -5px;
+  left: 0;
+}
+
+.c0 h3 {
+  font-size: 15px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+
+.c0 pre {
+  margin: 10px;
+  margin-bottom: 20px;
+}
+
+.c0 pre code {
+  padding: 20px;
+}
+
+.c1 {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  height: 30px;
+  margin-top: 14px;
+  border-bottom: 1px solid hsl(0,0%,70%);
+}
+
+.eIhMpy .c5::before {
+  border-color: hsl(210,60%,54%) transparent transparent transparent;
+}
+
+.c2 {
+  position: relative;
+  cursor: pointer;
+}
+
+.c3 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 11px;
+  line-height: 14px;
+  color: hsl(210,60%,54%);
+  -webkit-transform: translate(0,-100%);
+  -ms-transform: translate(0,-100%);
+  transform: translate(0,-100%);
+  -webkit-transition: -webkit-transform 0.2s linear,line-height 0.2s linear,color 0.2s, font-size 0.1s;
+  -webkit-transition: transform 0.2s linear,line-height 0.2s linear,color 0.2s, font-size 0.1s;
+  transition: transform 0.2s linear,line-height 0.2s linear,color 0.2s, font-size 0.1s;
+  -webkit-transform: translate(5px,0);
+  -ms-transform: translate(5px,0);
+  transform: translate(5px,0);
+  font-size: 14px;
+  line-height: 30px;
+  color: hsl(210,5%,70%);
+}
+
+.c4 {
+  width: calc(100% - 40px);
+}
+
+.c4 input {
+  max-width: 100%;
+  height: 30px;
+  padding-left: 5px;
+  border: 0;
+  outline: none;
+  box-sizing: content-box;
+  -webkit-appearance: none;
+  background: none;
+}
+
+.c6 {
+  background: none;
+  border: none;
+  position: absolute;
+  top: 50%;
+  right: 5px;
+  -webkit-transform: translate(0,-50%);
+  -ms-transform: translate(0,-50%);
+  transform: translate(0,-50%);
+  cursor: pointer;
+}
+
+.c6::before {
+  content: '';
+  display: inline-block;
+  border-width: 5px 5px 3px 5px;
+  border-style: solid;
+  border-color: hsl(0,0%,70%) transparent transparent transparent;
+}
+
+<div
+  className="c0"
+>
+  <header>
+    <h1>
+      Dropdown
+    </h1>
+    <h2>
+      react-select의 간략화된 컴포넌트.
+    </h2>
+  </header>
+  <div
+    className="preview"
+  >
+    <div
+      className="dropdown c1"
+    >
+      <div
+        className="c2"
+        onKeyDown={[Function]}
+        onMouseDown={[Function]}
+      >
+        <span
+          className="c3"
+        >
+          Dropdown
+        </span>
+        <div
+          className="c4"
+          style={
+            Object {
+              "display": "inline-block",
+            }
+          }
+        >
+          <input
+            className={undefined}
+            id={undefined}
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            style={
+              Object {
+                "boxSizing": "content-box",
+                "width": "1px",
+              }
+            }
+            value=""
+          />
+          <div
+            style={
+              Object {
+                "height": 0,
+                "left": 0,
+                "overflow": "scroll",
+                "position": "absolute",
+                "top": 0,
+                "visibility": "hidden",
+                "whiteSpace": "pre",
+              }
+            }
+          >
+            
+          </div>
+        </div>
+        <button
+          className="c5 c6"
+          onMouseDown={[Function]}
+          tabIndex={-1}
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    className="detail"
+  >
+    <h3>
+      Usage
+    </h3>
+    <h3>
+      Props interface (Typescript)
+    </h3>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Dropdown no options available 1`] = `
+.c0 {
+  padding: 20px;
+}
+
+.c0 h1 {
+  margin-bottom: 10px;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.c0 h2 {
+  font-size: 18px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 20px;
+}
+
+.c0 .preview {
+  position: relative;
+  padding: 20px;
+  margin: 20px 0;
+  background: #f8f9fa;
+}
+
+.c0 .preview::before {
+  content: 'Example';
+  position: absolute;
+  top: -5px;
+  left: 0;
+}
+
+.c0 h3 {
+  font-size: 15px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+
+.c0 pre {
+  margin: 10px;
+  margin-bottom: 20px;
+}
+
+.c0 pre code {
+  padding: 20px;
+}
+
+.c1 {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  height: 30px;
+  margin-top: 14px;
+  border-bottom: 1px solid hsl(0,0%,70%);
+}
+
+.eIhMpy .c5::before {
+  border-color: hsl(210,60%,54%) transparent transparent transparent;
+}
+
+.c2 {
+  position: relative;
+  cursor: pointer;
+}
+
+.c3 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 11px;
+  line-height: 14px;
+  color: hsl(210,60%,54%);
+  -webkit-transform: translate(0,-100%);
+  -ms-transform: translate(0,-100%);
+  transform: translate(0,-100%);
+  -webkit-transition: -webkit-transform 0.2s linear,line-height 0.2s linear,color 0.2s, font-size 0.1s;
+  -webkit-transition: transform 0.2s linear,line-height 0.2s linear,color 0.2s, font-size 0.1s;
+  transition: transform 0.2s linear,line-height 0.2s linear,color 0.2s, font-size 0.1s;
+  -webkit-transform: translate(5px,0);
+  -ms-transform: translate(5px,0);
+  transform: translate(5px,0);
+  font-size: 14px;
+  line-height: 30px;
+  color: hsl(210,5%,70%);
+}
+
+.c4 {
+  width: calc(100% - 40px);
+}
+
+.c4 input {
+  max-width: 100%;
+  height: 30px;
+  padding-left: 5px;
+  border: 0;
+  outline: none;
+  box-sizing: content-box;
+  -webkit-appearance: none;
+  background: none;
+}
+
+.c6 {
+  background: none;
+  border: none;
+  position: absolute;
+  top: 50%;
+  right: 5px;
+  -webkit-transform: translate(0,-50%);
+  -ms-transform: translate(0,-50%);
+  transform: translate(0,-50%);
+  cursor: pointer;
+}
+
+.c6::before {
+  content: '';
+  display: inline-block;
+  border-width: 5px 5px 3px 5px;
+  border-style: solid;
+  border-color: hsl(0,0%,70%) transparent transparent transparent;
+}
+
+<div
+  className="c0"
+>
+  <header>
+    <h1>
+      Dropdown
+    </h1>
+    <h2>
+      react-select의 간략화된 컴포넌트.
+    </h2>
+  </header>
+  <div
+    className="preview"
+  >
+    <div
+      className="dropdown c1"
+    >
+      <div
+        className="c2"
+        onKeyDown={[Function]}
+        onMouseDown={[Function]}
+      >
+        <span
+          className="c3"
+        >
+          Dropdown
+        </span>
+        <div
+          className="c4"
+          style={
+            Object {
+              "display": "inline-block",
+            }
+          }
+        >
+          <input
+            className={undefined}
+            id={undefined}
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            style={
+              Object {
+                "boxSizing": "content-box",
+                "width": "1px",
+              }
+            }
+            value=""
+          />
+          <div
+            style={
+              Object {
+                "height": 0,
+                "left": 0,
+                "overflow": "scroll",
+                "position": "absolute",
+                "top": 0,
+                "visibility": "hidden",
+                "whiteSpace": "pre",
+              }
+            }
+          >
+            
+          </div>
+        </div>
+        <button
+          className="c5 c6"
+          onMouseDown={[Function]}
+          tabIndex={-1}
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    className="detail"
+  >
+    <h3>
+      Usage
+    </h3>
+    <h3>
+      Props interface (Typescript)
+    </h3>
+  </div>
+</div>
+`;
