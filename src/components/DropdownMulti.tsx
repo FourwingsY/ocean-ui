@@ -280,9 +280,10 @@ class Dropdown extends PureComponent<Props, State> {
     this.input.focus();
   }
 
-  private blurInput() {
-    this.input.blur();
-  }
+  // not used in this component
+  // private blurInput() {
+  //   this.input.blur();
+  // }
 
   private closeMenu() {
     this.setState({
