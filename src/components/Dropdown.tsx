@@ -1,10 +1,10 @@
 import React, {
-  Component,
+  PureComponent,
   ReactNode,
   ChangeEvent,
   MouseEvent,
   KeyboardEvent,
-  FocusEvent
+  FocusEvent,
 } from 'react';
 import ReactDOM from 'react-dom';
 import cx from 'classnames';
@@ -23,7 +23,7 @@ import {
   ClearButton,
   ErrorMessage,
   Menu,
-  Option
+  Option,
 } from './Dropdown.style';
 
 type OptionBase<
@@ -93,15 +93,15 @@ const defaultFilterOptions = (
   return options;
 };
 
-class Dropdown extends Component<Props, State> {
+class Dropdown extends PureComponent<Props, State> {
   private input: HTMLInputElement;
   private menu: HTMLDivElement;
 
-  public state = {
+  public state: State = {
     inputFocused: this.props.autoFocus || false,
     inputValue: '',
     focusedOption: this.props.value,
-    menuOpened: false
+    menuOpened: false,
   };
 
   // data cache
@@ -112,7 +112,7 @@ class Dropdown extends Component<Props, State> {
     this.setState(prevState => ({
       ...prevState,
       inputValue,
-      menuOpened: true
+      menuOpened: true,
     }));
   };
 
@@ -120,7 +120,7 @@ class Dropdown extends Component<Props, State> {
     this.setState(prevState => ({
       ...prevState,
       inputFocused: true,
-      menuOpened: true
+      menuOpened: true,
     }));
     this.props.onFocus(e);
   };
@@ -129,7 +129,7 @@ class Dropdown extends Component<Props, State> {
     this.setState(prevState => ({
       ...prevState,
       inputFocused: false,
-      menuOpened: false
+      menuOpened: false,
     }));
     this.props.onBlur(e);
   };
@@ -177,7 +177,7 @@ class Dropdown extends Component<Props, State> {
     if (!this.state.menuOpened) {
       this.setState(prevState => ({
         ...prevState,
-        menuOpened: true
+        menuOpened: true,
       }));
     }
     this.focusInput();
@@ -198,7 +198,7 @@ class Dropdown extends Component<Props, State> {
     e.stopPropagation();
     e.preventDefault();
     this.setState({
-      menuOpened: !this.state.menuOpened
+      menuOpened: !this.state.menuOpened,
     });
   };
 
@@ -210,7 +210,7 @@ class Dropdown extends Component<Props, State> {
     this.setState(prevState => ({
       ...prevState,
       menuOpened: false,
-      inputValue: ''
+      inputValue: '',
     }));
     this.props.onChange(option);
   };
@@ -221,7 +221,7 @@ class Dropdown extends Component<Props, State> {
       ...prevState,
       focusedOption: null,
       menuOpened: false,
-      inputValue: ''
+      inputValue: '',
     }));
     this.props.onChange(this.state.focusedOption);
   };
@@ -232,7 +232,7 @@ class Dropdown extends Component<Props, State> {
     this.focusInput();
     this.setState(prevState => ({
       ...prevState,
-      inputValue: ''
+      inputValue: '',
     }));
   };
 
@@ -253,7 +253,7 @@ class Dropdown extends Component<Props, State> {
     }
     this.setState(prevState => ({
       ...prevState,
-      focusedOption: option
+      focusedOption: option,
     }));
     this.scrollToFocusedOption(option);
   };
@@ -333,7 +333,7 @@ class Dropdown extends Component<Props, State> {
     const { value, valueRenderer, labelKey } = this.props;
     return (
       <Value>
-        <If condition={Boolean(value)}>{valueRenderer(value, labelKey)}</If>
+        <If condition={value}>{valueRenderer(value, labelKey)}</If>
       </Value>
     );
   };
@@ -381,7 +381,7 @@ class Dropdown extends Component<Props, State> {
     const {
       options: givenOptions,
       labelKey,
-      noValidOptionMessage
+      noValidOptionMessage,
     } = this.props;
     const { inputValue } = this.state;
 
@@ -414,7 +414,7 @@ class Dropdown extends Component<Props, State> {
       <Option
         className={cx('dropdown-option', {
           focused: option === focusedOption,
-          disabled
+          disabled,
         })}
         key={option[valueKey]}
         onClick={this.selectOption(option)}
@@ -433,28 +433,28 @@ class Dropdown extends Component<Props, State> {
       searchable,
       clearable,
       disabled,
-      errorMessage
+      errorMessage,
     } = this.props;
     const { menuOpened, inputFocused } = this.state;
     return (
       <StyledDropdown
         className={cx('dropdown', className)}
         focused={inputFocused}
-        hasValue={Boolean(value)}
+        hasValue={value}
       >
         <DropdownControl
           onMouseDown={this.onMouseDownOnControl}
           onKeyDown={this.onKeyDown}
         >
-          <If condition={Boolean(label)}>{this.renderLabel()}</If>
-          <If condition={Boolean(value)}>{this.renderValue()}</If>
+          <If condition={label}>{this.renderLabel()}</If>
+          <If condition={value && !inputFocused}>{this.renderValue()}</If>
           <If condition={searchable && !disabled}>{this.renderInput()}</If>
-          <If condition={Boolean(value) && clearable && !disabled}>
+          <If condition={value && clearable && !disabled}>
             {this.renderClear()}
           </If>
           <If condition={!disabled}>{this.renderArrow()}</If>
         </DropdownControl>
-        <If condition={Boolean(errorMessage)}>
+        <If condition={errorMessage}>
           <ErrorMessage>{errorMessage}</ErrorMessage>
         </If>
         <If condition={menuOpened}>{this.renderMenu()}</If>
@@ -481,7 +481,7 @@ const defaultProps: Partial<Props> = {
   searchable: true,
   autoFocus: false,
 
-  noValidOptionMessage: '선택 가능한 옵션이 없습니다'
+  noValidOptionMessage: '선택 가능한 옵션이 없습니다',
 };
 
 export default withDefaultProps(defaultProps)(Dropdown);

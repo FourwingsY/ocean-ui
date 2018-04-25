@@ -13,8 +13,7 @@ export const StyledDropdown = styled.div`
   position: relative;
   display: inline-block;
   width: 100%;
-  height: 30px;
-  margin-top: 14px;
+  padding-top: 14px;
   border-bottom: 1px solid ${border.strong};
   ${(props: DropdownProps) => (props.focused ? onFocused : '')};
   ${(props: DropdownProps) => (props.hasValue ? hasValue : '')};
@@ -22,11 +21,14 @@ export const StyledDropdown = styled.div`
 
 export const DropdownControl = styled.div`
   position: relative;
+  display: flex;
+  align-items: center;
   cursor: pointer;
 `;
 
 const placeholderStyle = css`
-  transform: translate(5px, 0);
+  left: 5px;
+  bottom: 0;
   font-size: ${fontSize.default};
   line-height: 30px;
   color: ${text.placeholder};
@@ -37,32 +39,30 @@ interface LabelProps {
 }
 export const Label = styled.span`
   position: absolute;
-  top: 0;
+  bottom: 100%;
   left: 0;
   font-size: 11px;
   line-height: 14px;
   color: ${color.main};
-  transform: translate(0, -100%);
-  transition: transform 0.2s linear, line-height 0.2s linear, color 0.2s,
-    font-size 0.1s;
+  transition: bottom 0.2s linear, left 0.2s linear, line-height 0.2s linear,
+    color 0.2s, font-size 0.1s;
   ${(props: LabelProps) => (props.asPlaceholder ? placeholderStyle : '')};
 `;
 
 export const Value = styled.div`
-  position: absolute;
-  top: 0;
-  left: 5px;
+  padding-left: 5px;
   line-height: 30px;
   display: inline-block;
 `;
 
 export const Input = styled(AutosizeInput)`
-  width: calc(100% - 40px);
+  flex-grow: 1;
   & input {
     max-width: 100%;
     height: 30px;
     padding-left: 5px;
     border: 0;
+    vertical-align: top;
     outline: none;
     box-sizing: content-box;
     -webkit-appearance: none;
@@ -79,16 +79,10 @@ interface ArrowProps {
 }
 
 export const ToggleArrow = styled.button`
-  background: none;
-  border: none;
-  position: absolute;
-  top: 50%;
-  right: 5px;
-  transform: translate(0, -50%);
-  cursor: pointer;
   &::before {
     content: '';
     display: inline-block;
+    margin: 0 3px;
     border-width: 5px 5px 3px 5px;
     border-style: solid;
     border-color: ${border.strong} transparent transparent transparent;
@@ -97,13 +91,7 @@ export const ToggleArrow = styled.button`
 `;
 
 export const ClearButton = styled.button`
-  background: none;
-  border: none;
-  position: absolute;
-  top: 50%;
-  right: 20px;
-  transform: translate(0, -50%);
-  cursor: pointer;
+  margin: 0 3px;
   &:focus,
   &:hover {
     color: ${color.warn};
@@ -116,6 +104,7 @@ export const ErrorMessage = styled.div`
   bottom: -14px;
   display: inline-block;
   padding: 1px 2px;
+  margin: 0 3px;
   font-size: 11px;
   line-height: normal;
   color: ${color.warn};
@@ -130,7 +119,7 @@ export const Menu = styled.div`
   border: 1px solid ${border.weak};
   box-sizing: border-box;
   background: white;
-  overflow: scroll;
+  overflow-y: scroll;
   z-index: 2;
   transform: translateY(1px);
   cursor: pointer;
