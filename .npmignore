@@ -5,6 +5,7 @@ config
 coverage
 docs
 node_modules
+src/stories
 types
 .babelrc
 package-scripts.js
