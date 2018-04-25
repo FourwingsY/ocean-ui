@@ -362,6 +362,7 @@ class Dropdown extends PureComponent<Props, State> {
   private renderArrow() {
     return (
       <ToggleArrow
+        type="button"
         opened={this.state.menuOpened}
         onMouseDown={this.onMouseDownOnArrow}
         tabIndex={-1}
@@ -371,7 +372,11 @@ class Dropdown extends PureComponent<Props, State> {
 
   private renderClear() {
     return (
-      <ClearButton className="dropdown-clear" onClick={this.clearValue}>
+      <ClearButton
+        type="button"
+        className="dropdown-clear"
+        onClick={this.clearValue}
+      >
         ×
       </ClearButton>
     );

@@ -79,10 +79,13 @@ interface ArrowProps {
 }
 
 export const ToggleArrow = styled.button`
+  padding: 0 5px;
+  background: none;
+  border: 0;
+  cursor: pointer;
   &::before {
     content: '';
     display: inline-block;
-    margin: 0 3px;
     border-width: 5px 5px 3px 5px;
     border-style: solid;
     border-color: ${border.strong} transparent transparent transparent;
@@ -91,7 +94,10 @@ export const ToggleArrow = styled.button`
 `;
 
 export const ClearButton = styled.button`
-  margin: 0 3px;
+  padding: 0 5px;
+  background: none;
+  border: 0;
+  cursor: pointer;
   &:focus,
   &:hover {
     color: ${color.warn};
