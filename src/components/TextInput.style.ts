@@ -15,6 +15,7 @@ export const StyledTextInput = styled.div`
   display: inline-block;
   width: 100%;
   padding-top: 14px;
+  font-size: ${props => props.theme.fontSize.default};
   text-align: left;
   border-bottom: 1px solid ${props => props.theme.color.highlight};
   & .text-input-control {
@@ -22,6 +23,7 @@ export const StyledTextInput = styled.div`
     position: relative;
     align-items: center;
     & ${Input} {
+      font-size: inherit;
       flex-grow: 1;
     }
     & .icon {
