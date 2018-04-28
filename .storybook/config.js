@@ -10,6 +10,7 @@ function loadStories() {
   require('../src/stories/DropdownMulti');
   require('../src/stories/Calendar');
   require('../src/stories/SingleDatePicker');
+  require('../src/stories/DateRangePicker');
 }
 
 Settings.defaultLocale = 'ko';

@@ -1,5 +1,5 @@
 import React, { Component, MouseEvent } from 'react';
-import { DateTime } from 'luxon';
+import { DateTime, Duration } from 'luxon';
 import withDefaultProps from '../utils/withDefaultProps';
 
 import {
@@ -129,9 +129,10 @@ class Calendar extends Component<Props, State> {
     const days: DateTime[] = [];
     let date = firstDateOfCalendar;
 
+    const aDay = Duration.fromObject({ days: 1 });
     while (date < lastDateOfCalendar) {
       days.push(date);
-      date = date.plus({ days: 1 });
+      date = date.plus(aDay);
     }
 
     return <DateSelectorBody>{days.map(this.renderDate)}</DateSelectorBody>;

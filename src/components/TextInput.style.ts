@@ -4,10 +4,12 @@ import { Label, ClearButton, ErrorMessage } from './common.style';
 export { Label, ClearButton, ErrorMessage };
 
 export const Input = styled.input`
+  max-width: 100%;
   height: 30px;
   padding-left: 5px;
   border: 0;
   background: none;
+  box-sizing: border-box;
 `;
 
 export const StyledTextInput = styled.div`

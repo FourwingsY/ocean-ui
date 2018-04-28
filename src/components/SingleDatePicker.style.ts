@@ -1,6 +1,5 @@
 import styled, { css } from 'styled-components';
 
-import { StyledTextInput } from './TextInput.style';
 import { DateCell, DateCellProps } from './Calendar.style';
 
 export const StyledSingleDatePicker = styled.div`
