@@ -1,61 +1,13 @@
-import styled, { css } from 'styled-components';
-import { convert } from 'css-color-function';
+import styled from 'styled-components';
 
-const placeholderStyle = css`
-  bottom: 0;
-  left: 5px;
-  font-size: ${props => props.theme.fontSize.default};
-  line-height: 30px;
-  color: ${props => props.theme.text.placeholder};
-  cursor: text;
-`;
-
-interface LabelProps {
-  asPlaceholder: boolean;
-}
-export const Label = styled.span`
-  position: absolute;
-  bottom: 100%;
-  left: 0;
-  font-size: 11px;
-  line-height: 14px;
-  color: ${props => props.theme.color.main};
-  transition: bottom 0.2s linear, left 0.2s linear, line-height 0.2s linear,
-    color 0.2s, font-size 0.1s;
-  pointer-events: none;
-  ${(props: LabelProps) => (props.asPlaceholder ? placeholderStyle : '')};
-`;
+import { Label, ClearButton, ErrorMessage } from './common.style';
+export { Label, ClearButton, ErrorMessage };
 
 export const Input = styled.input`
   height: 30px;
   padding-left: 5px;
   border: 0;
   background: none;
-`;
-
-export const ClearButton = styled.button`
-  padding: 0 5px;
-  background: none;
-  border: 0;
-  cursor: pointer;
-  &:focus,
-  &:hover {
-    color: #d0021b;
-  }
-`;
-
-export const ErrorMessage = styled.div`
-  position: absolute;
-  left: 0;
-  top: 100%;
-  display: inline-block;
-  padding: 1px 2px;
-  margin-top: 1px;
-  font-size: 11px;
-  line-height: normal;
-  color: ${props => props.theme.color.warn};
-  background: ${props => convert(`color(${props.theme.color.warn} a(0.1))`)};
-  border-radius: 3px;
 `;
 
 export const StyledTextInput = styled.div`
@@ -68,15 +20,11 @@ export const StyledTextInput = styled.div`
   & .text-input-control {
     display: flex;
     position: relative;
+    align-items: center;
     & ${Input} {
       flex-grow: 1;
     }
-    & ${ClearButton} {
-      align-self: center;
-      margin: 0 5px;
-    }
     & .icon {
-      align-self: center;
       margin: 0 5px;
       cursor: pointer;
     }

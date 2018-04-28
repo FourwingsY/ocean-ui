@@ -377,7 +377,7 @@ class Dropdown extends PureComponent<Props, State> {
         className="dropdown-clear"
         onClick={this.clearValue}
       >
-        ×
+        ✕
       </ClearButton>
     );
   }

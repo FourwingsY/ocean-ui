@@ -378,13 +378,12 @@ class Dropdown extends PureComponent<Props, State> {
    */
   private renderValue = value => {
     const { valueRenderer, labelKey, disabled } = this.props;
-    console.log(value);
     return (
       <Value>
         {valueRenderer(value, labelKey)}
         <If condition={!disabled}>
           <span className="remove-value" onClick={this.removeValue(value)}>
-            ×
+            ✕
           </span>
         </If>
       </Value>
@@ -399,7 +398,8 @@ class Dropdown extends PureComponent<Props, State> {
   private renderLabel() {
     const { inputFocused } = this.state;
     const { value, label } = this.props;
-    return <Label asPlaceholder={!inputFocused && !value}>{label}</Label>;
+    const hasValue = value.length > 0;
+    return <Label asPlaceholder={!inputFocused && !hasValue}>{label}</Label>;
   }
 
   private renderInput() {
@@ -435,7 +435,7 @@ class Dropdown extends PureComponent<Props, State> {
         className="dropdown-clear"
         onClick={this.clearValues}
       >
-        ×
+        ✕
       </ClearButton>
     );
   }
@@ -500,11 +500,12 @@ class Dropdown extends PureComponent<Props, State> {
       errorMessage,
     } = this.props;
     const { menuOpened, inputFocused } = this.state;
+    const hasValue = value.length > 0;
     return (
       <StyledDropdown
         className={cx('dropdown', className)}
         focused={inputFocused}
-        hasValue={value.length > 0}
+        hasValue={hasValue}
         innerRef={c => (this.wrapper = c)}
       >
         <DropdownControl
@@ -512,9 +513,9 @@ class Dropdown extends PureComponent<Props, State> {
           onKeyDown={this.onKeyDown}
         >
           <If condition={label}>{this.renderLabel()}</If>
-          <If condition={value}>{this.renderValues()}</If>
+          <If condition={hasValue}>{this.renderValues()}</If>
           <If condition={searchable && !disabled}>{this.renderInput()}</If>
-          <If condition={value && clearable && !disabled}>
+          <If condition={hasValue && clearable && !disabled}>
             {this.renderClear()}
           </If>
           <If condition={!disabled}>{this.renderArrow()}</If>
