@@ -1,5 +1,6 @@
 import { configure } from '@storybook/react';
 import { setOptions } from '@storybook/addon-options';
+import { Settings } from 'luxon';
 
 function loadStories() {
   require('../src/stories/style');
@@ -7,7 +8,10 @@ function loadStories() {
   require('../src/stories/TagsInput');
   require('../src/stories/Dropdown');
   require('../src/stories/DropdownMulti');
+  require('../src/stories/Calendar');
 }
+
+Settings.defaultLocale = 'ko';
 
 setOptions({
   addonPanelInRight: true,
