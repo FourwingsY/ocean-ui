@@ -5,11 +5,11 @@ import { withKnobs, text } from '@storybook/addon-knobs/react';
 import { withState } from '@dump247/storybook-state';
 import { DateTime } from 'luxon';
 
-import SingleDatePicker from '../components/SingleDatePicker';
+import DatePicker from '../components/DatePicker';
 
 import Documentation from './Documentation';
 
-const SingleDatePickerProps = `\
+const DatePickerProps = `\
   interface Props {
     selectedDate: DateTime,
     onSelect(selectedDate: DateTime): void,
@@ -19,7 +19,7 @@ const SingleDatePickerProps = `\
 `;
 
 const usage = `\
-  <SingleDatePicker
+  <DatePicker
     selectedDate={this.state.selectedDate}
     onSelect={this.onSelect}
     label="Select your Birthday"
@@ -33,18 +33,18 @@ const initialState: State = {
   selectedDate: null,
 };
 
-storiesOf('SingleDatePicker', module)
+storiesOf('DatePicker', module)
   .addDecorator(withKnobs)
   .add(
     'default',
     withState(initialState, store => (
       <Documentation
-        name="SingleDatePicker"
+        name="DatePicker"
         description="단일 일자 선택 기능을 위해 Calendar를 래핑한 컴포넌트."
         usage={usage}
-        tsInterface={SingleDatePickerProps}
+        tsInterface={DatePickerProps}
       >
-        <SingleDatePicker
+        <DatePicker
           selectedDate={store.state.selectedDate}
           onSelect={date => {
             store.set({ selectedDate: date });

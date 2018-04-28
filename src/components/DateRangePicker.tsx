@@ -249,6 +249,10 @@ class DateRangePicker extends Component<Props, State> {
             />
           </div>
         </If>
+        <p className="buttons">
+          <button onClick={this.close}>취소</button>
+          <button onClick={this.apply}>설정</button>
+        </p>
       </StyledDateRangePicker>
     );
   }

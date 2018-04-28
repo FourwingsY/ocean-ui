@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 
 import { DateCell, DateCellProps } from './Calendar.style';
 
-export const StyledSingleDatePicker = styled.div`
+export const StyledDatePicker = styled.div`
   width: 100%;
   text-align: center;
   & .calendar-layer {

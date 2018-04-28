@@ -6,7 +6,7 @@ import TextInput from './TextInput';
 import If from './If';
 import CalendarIcon from '../icons/Calendar';
 
-import { StyledSingleDatePicker, PickerCell } from './SingleDatePicker.style';
+import { StyledDatePicker, PickerCell } from './DatePicker.style';
 
 interface Props {
   selectedDate: DateTime | null;
@@ -21,7 +21,7 @@ interface State {
   focused: boolean;
 }
 
-export default class SingleDatePicker extends Component<Props, State> {
+export default class DatePicker extends Component<Props, State> {
   public state = {
     focused: false,
   };
@@ -65,7 +65,7 @@ export default class SingleDatePicker extends Component<Props, State> {
     const { focused } = this.state;
 
     return (
-      <StyledSingleDatePicker className="single-date-picker">
+      <StyledDatePicker className="date-picker">
         <TextInput
           value={selectedDate ? selectedDate.toFormat('yyyy-MM-dd') : ''}
           label={label}
@@ -84,7 +84,7 @@ export default class SingleDatePicker extends Component<Props, State> {
             <Calendar onSelect={this.onSelect} dateRenderer={this.renderDate} />
           </div>
         </If>
-      </StyledSingleDatePicker>
+      </StyledDatePicker>
     );
   }
 }
