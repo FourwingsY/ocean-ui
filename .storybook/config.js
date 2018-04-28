@@ -3,6 +3,7 @@ import { setOptions } from '@storybook/addon-options';
 
 function loadStories() {
   require('../src/stories/style');
+  require('../src/stories/TextInput');
   require('../src/stories/Dropdown');
   require('../src/stories/DropdownMulti');
 }
