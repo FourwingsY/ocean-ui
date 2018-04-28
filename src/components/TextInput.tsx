@@ -29,7 +29,7 @@ export interface Props {
   onBlur(e): void;
 }
 
-const ignoreEvent = e => {};
+const ignoreEvent = () => {};
 export const defaultProps = {
   type: 'text',
   label: '',

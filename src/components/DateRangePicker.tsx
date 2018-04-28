@@ -138,14 +138,14 @@ class DateRangePicker extends Component<Props, State> {
     }
   };
 
-  expectRange = (date: DateTime) => e => {
+  expectRange = (date: DateTime) => () => {
     const dateRange = this.updateDateRange(this.state.target, date);
     this.setState({
       expectedRange: dateRange,
     });
   };
 
-  resetExpectedRange = e => {
+  resetExpectedRange = () => {
     this.setState({ expectedRange: [null, null] });
   };
 

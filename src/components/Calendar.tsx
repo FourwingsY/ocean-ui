@@ -36,7 +36,7 @@ const defaultDateRenderer = (date: DateTime, view: DateTime) => {
   );
 };
 
-const doNothing = e => {};
+const doNothing = () => {};
 const defaultProps: Props = {
   onSelect: doNothing,
   dateRenderer: defaultDateRenderer,
