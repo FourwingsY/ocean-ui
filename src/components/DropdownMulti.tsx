@@ -390,11 +390,6 @@ class Dropdown extends PureComponent<Props, State> {
     );
   };
 
-  private renderValues() {
-    const { value } = this.props;
-    return <Values>{value.map(this.renderValue)}</Values>;
-  }
-
   private renderLabel() {
     const { inputFocused } = this.state;
     const { value, label } = this.props;
@@ -513,8 +508,10 @@ class Dropdown extends PureComponent<Props, State> {
           onKeyDown={this.onKeyDown}
         >
           <If condition={label}>{this.renderLabel()}</If>
-          <If condition={hasValue}>{this.renderValues()}</If>
-          <If condition={searchable && !disabled}>{this.renderInput()}</If>
+          <Values>
+            <If condition={hasValue}>{value.map(this.renderValue)}</If>
+            <If condition={searchable && !disabled}>{this.renderInput()}</If>
+          </Values>
           <If condition={hasValue && clearable && !disabled}>
             {this.renderClear()}
           </If>

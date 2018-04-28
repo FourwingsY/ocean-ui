@@ -13,8 +13,8 @@ const DropdownProps = `\
 
   interface Props {
     options: Option[]
-    value: Option | null
-    onChange: (option: Option) => void
+    value: Option[] | null
+    onChange: (option: Option[]) => void
 
     valueKey?: string
     labelKey?: string

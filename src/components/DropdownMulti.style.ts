@@ -14,6 +14,7 @@ export {
 
 export const Values = styled.div`
   display: inline-block;
+  flex-grow: 1;
   line-height: 30px;
 `;
 
