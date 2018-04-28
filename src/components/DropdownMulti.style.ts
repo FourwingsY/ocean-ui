@@ -22,8 +22,8 @@ export const Value = styled.div`
   padding: 2px 5px;
   font-size: 12px;
   line-height: 18px;
-  background: rgba(255, 255, 255, 0.4);
-  border: 1px solid #eee;
+  background: ${props => props.theme.background.white};
+  border: 1px solid ${props => props.theme.border.weak};
   border-radius: 3px;
   margin: 2px;
   & .remove-value {

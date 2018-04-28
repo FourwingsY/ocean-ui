@@ -2,8 +2,6 @@ import styled, { css } from 'styled-components';
 import AutosizeInput from 'react-input-autosize';
 import { convert } from 'css-color-function';
 
-import { color, border, text, fontSize, background } from '../styles/theme';
-
 interface DropdownProps {
   focused: boolean;
   hasValue: boolean;
@@ -14,7 +12,7 @@ export const StyledDropdown = styled.div`
   display: inline-block;
   width: 100%;
   padding-top: 14px;
-  border-bottom: 1px solid ${border.strong};
+  border-bottom: 1px solid ${props => props.theme.border.strong};
   ${(props: DropdownProps) => (props.focused ? onFocused : '')};
   ${(props: DropdownProps) => (props.hasValue ? hasValue : '')};
 `;
@@ -29,13 +27,13 @@ export const DropdownControl = styled.div`
 const placeholderStyle = css`
   left: 5px;
   bottom: 0;
-  font-size: ${fontSize.default};
+  font-size: ${props => props.theme.fontSize.default};
   line-height: 30px;
-  color: ${text.placeholder};
+  color: ${props => props.theme.text.placeholder};
 `;
 
 interface LabelProps {
-  asPlaceholder?: boolean;
+  asPlaceholder: boolean;
 }
 export const Label = styled.span`
   position: absolute;
@@ -43,7 +41,7 @@ export const Label = styled.span`
   left: 0;
   font-size: 11px;
   line-height: 14px;
-  color: ${color.main};
+  color: ${props => props.theme.color.main};
   transition: bottom 0.2s linear, left 0.2s linear, line-height 0.2s linear,
     color 0.2s, font-size 0.1s;
   ${(props: LabelProps) => (props.asPlaceholder ? placeholderStyle : '')};
@@ -88,7 +86,8 @@ export const ToggleArrow = styled.button`
     display: inline-block;
     border-width: 5px 5px 3px 5px;
     border-style: solid;
-    border-color: ${border.strong} transparent transparent transparent;
+    border-color: ${props => props.theme.border.strong} transparent transparent
+      transparent;
     ${(props: ArrowProps) => (props.opened ? rotateArrow : '')};
   }
 `;
@@ -100,7 +99,7 @@ export const ClearButton = styled.button`
   cursor: pointer;
   &:focus,
   &:hover {
-    color: ${color.warn};
+    color: ${props => props.theme.color.warn};
   }
 `;
 
@@ -113,8 +112,8 @@ export const ErrorMessage = styled.div`
   margin: 0 3px;
   font-size: 11px;
   line-height: normal;
-  color: ${color.warn};
-  background: ${convert(`color(${color.warn} a(0.1))`)};
+  color: ${props => props.theme.color.warn};
+  background: ${props => convert(`color(${props.theme.color.warn} a(0.1))`)};
   border-radius: 3px;
 `;
 
@@ -122,7 +121,7 @@ export const Menu = styled.div`
   position: absolute;
   width: 100%;
   max-height: 200px;
-  border: 1px solid ${border.weak};
+  border: 1px solid ${props => props.theme.border.weak};
   box-sizing: border-box;
   background: white;
   overflow-y: scroll;
@@ -132,27 +131,28 @@ export const Menu = styled.div`
   & .no-valid-option {
     display: block;
     padding: 8px 5px;
-    font-size: ${fontSize.small};
-    color: ${text.placeholder};
+    font-size: ${props => props.theme.fontSize.small};
+    color: ${props => props.theme.text.placeholder};
   }
 `;
 
 export const Option = styled.div`
   padding: 8px 5px;
   &.focused {
-    background: ${background.hover};
+    background: ${props => props.theme.background.hover};
   }
   &.disabled {
-    color: ${text.placeholder};
+    color: ${props => props.theme.text.placeholder};
     cursor: default;
   }
 `;
 
 /* Depends on Status */
 const onFocused = css`
-  border-bottom: 1px solid ${color.main};
+  border-bottom: 1px solid ${props => props.theme.color.main};
   ${ToggleArrow}::before {
-    border-color: ${color.main} transparent transparent transparent;
+    border-color: ${props => props.theme.color.main} transparent transparent
+      transparent;
   }
 `;
 

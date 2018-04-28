@@ -1,25 +1,29 @@
-import React, { Component, ReactNode } from 'react'
-import Highlight from 'react-highlight'
+import React, { Component, ReactNode } from 'react';
+import { ThemeProvider } from 'styled-components';
+import Highlight from 'react-highlight';
 
-import { StyledDocumentation } from './style'
+import { StyledDocumentation } from './style';
+import { defaultTheme } from '../theme';
 
 interface Props {
-  name: string
-  description?: string | ReactNode
-  usage?: string
-  tsInterface?: string
+  name: string;
+  description?: string | ReactNode;
+  usage?: string;
+  tsInterface?: string;
 }
 
 export default class Documentation extends Component<Props> {
   render() {
-    const { name, description, usage, tsInterface, children } = this.props
+    const { name, description, usage, tsInterface, children } = this.props;
     return (
       <StyledDocumentation>
         <header>
           <h1>{name}</h1>
           <h2>{description}</h2>
         </header>
-        <div className="preview">{children}</div>
+        <div className="preview">
+          <ThemeProvider theme={defaultTheme}>{children}</ThemeProvider>
+        </div>
         <div className="detail">
           {usage && (
             <>
@@ -35,6 +39,6 @@ export default class Documentation extends Component<Props> {
           )}
         </div>
       </StyledDocumentation>
-    )
+    );
   }
 }
