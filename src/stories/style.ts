@@ -1,19 +1,7 @@
-import styled, { injectGlobal } from 'styled-components';
-
-import D2CodingWoff2 from '../../assets/fonts/d2coding-ligature.woff2';
+import { injectGlobal } from 'styled-components';
 
 // Original highlight.js style
 injectGlobal`
-  @font-face {
-    font-family: 'D2Coding';
-    font-weight: 400;
-    src: url('${D2CodingWoff2}') format('woff2');
-  }
-
-  body {
-    font-family: D2Coding;
-  }
-
   /*
 
   Atom One Dark by Daniel Gamage
@@ -110,44 +98,5 @@ injectGlobal`
 
   .hljs-link {
     text-decoration: underline;
-  }
-`;
-
-export const StyledDocumentation = styled.div`
-  padding: 20px;
-  h1 {
-    margin-bottom: 10px;
-    font-size: 25px;
-    font-weight: bold;
-  }
-  h2 {
-    font-size: 18px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #ddd;
-    margin-bottom: 20px;
-  }
-  .preview {
-    position: relative;
-    padding: 20px;
-    margin: 20px 0;
-    background: #f8f9fa;
-    &::before {
-      content: 'Example';
-      position: absolute;
-      top: -5px;
-      left: 0;
-    }
-  }
-  h3 {
-    font-size: 15px;
-    margin-left: 10px;
-    margin-bottom: 10px;
-  }
-  pre {
-    margin: 10px;
-    margin-bottom: 20px;
-    & code {
-      padding: 20px;
-    }
   }
 `;
