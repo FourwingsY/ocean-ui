@@ -36,7 +36,7 @@ const defaultUsage = `\
 
 const emptyValue: string[] = [];
 
-storiesOf('TagsInput', module)
+storiesOf('String/TagsInput', module)
   .addDecorator(withKnobs)
   .add(
     'default',

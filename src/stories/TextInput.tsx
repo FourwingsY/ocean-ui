@@ -34,7 +34,7 @@ const usage = `\
   />
 `;
 
-storiesOf('TextInput', module)
+storiesOf('String/TextInput', module)
   .addDecorator(withKnobs)
   .add(
     'default',

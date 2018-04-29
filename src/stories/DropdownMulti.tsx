@@ -154,7 +154,7 @@ const disableOddOption = option => {
 
 const emptyValue: any[] = [];
 
-storiesOf('DropdownMulti', module)
+storiesOf('Option/DropdownMulti', module)
   .addDecorator(withKnobs)
   .add(
     'default',

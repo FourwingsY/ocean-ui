@@ -123,7 +123,7 @@ const Options = [
   { label: 'Option 1', value: 1 },
   { label: 'Option 2', value: 2 },
   { label: 'Option 3', value: 3 },
-  { label: 'Option 4', value: 4 }
+  { label: 'Option 4', value: 4 },
 ];
 
 const exampleOptionRenderer = (option, labelKey) => {
@@ -149,7 +149,7 @@ const disableOddOption = option => {
   return option.value % 2 === 1;
 };
 
-storiesOf('Dropdown', module)
+storiesOf('Option/Dropdown', module)
   .addDecorator(withKnobs)
   .add(
     'default',

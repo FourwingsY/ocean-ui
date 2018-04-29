@@ -27,7 +27,7 @@ const description = (
   </>
 );
 
-storiesOf('Calendar', module)
+storiesOf('Date/Calendar', module)
   .addDecorator(withKnobs)
   .add('default', () => (
     <Documentation

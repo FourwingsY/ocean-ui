@@ -33,7 +33,7 @@ const initialState: State = {
   selectedDate: null,
 };
 
-storiesOf('DatePicker', module)
+storiesOf('Date/DatePicker', module)
   .addDecorator(withKnobs)
   .add(
     'default',
