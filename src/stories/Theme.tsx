@@ -8,6 +8,8 @@ import TextInput from '../components/TextInput';
 
 import Documentation from './Documentation';
 
+import { StyledDefaultThemePreview, StyledColorChip } from './Theme.style';
+
 const theme = {
   ...defaultTheme,
   color: {
@@ -16,6 +18,66 @@ const theme = {
   },
 };
 
+function ColorChip(props) {
+  return (
+    <StyledColorChip>
+      <b>{props.name}</b>
+      <div style={{ backgroundColor: props.color }} />
+      <span>{props.color}</span>
+    </StyledColorChip>
+  );
+}
+class DefaultThemePreview extends Component {
+  render() {
+    const { color, background, border, text, fontSize } = defaultTheme;
+    return (
+      <StyledDefaultThemePreview>
+        <h2>Colors</h2>
+        <ul className="colors">
+          <li>
+            <ColorChip name="color.main" color={color.main} />
+          </li>
+          <li>
+            <ColorChip name="color.warn" color={color.warn} />
+          </li>
+          <li>
+            <ColorChip name="background.white" color={background.white} />
+          </li>
+          <li>
+            <ColorChip name="background.hover" color={background.hover} />
+          </li>
+          <li>
+            <ColorChip name="border.strong" color={border.strong} />
+          </li>
+          <li>
+            <ColorChip name="border.weak" color={border.weak} />
+          </li>
+          <li>
+            <ColorChip name="text.default" color={text.default} />
+          </li>
+          <li>
+            <ColorChip name="text.placeholder" color={text.placeholder} />
+          </li>
+        </ul>
+        <h2>Sizes</h2>
+        <ul className="sizes">
+          <li>
+            <b>fontSize.large</b>
+            <span>{fontSize.large}</span>
+          </li>
+          <li>
+            <b>fontSize.default</b>
+            <span>{fontSize.default}</span>
+          </li>
+          <li>
+            <b>fontSize.small</b>
+            <span>{fontSize.small}</span>
+          </li>
+        </ul>
+      </StyledDefaultThemePreview>
+    );
+  }
+}
 const defaultUsage = `\
   import { defaultTheme } from 'ocean-ui';
 
@@ -81,22 +143,25 @@ storiesOf('Guide', module)
   .add(
     'default theme',
     withState({ value: '' }, store => (
-      <Documentation
-        name="Use ThemeProvider"
-        description="ThemeProvider 컴포넌트를 사용하여 테마를 제공해야 합니다. defaultTheme을 사용할 수 있습니다."
-        usage={defaultUsage}
-        tsInterface={themeInterface}
-      >
-        <ThemeProvider theme={defaultTheme}>
-          <TextInput
-            value={store.state.value}
-            onChange={value => {
-              store.set({ value });
-            }}
-            label="Label"
-          />
-        </ThemeProvider>
-      </Documentation>
+      <>
+        <Documentation
+          name="Use ThemeProvider"
+          description="ThemeProvider 컴포넌트를 사용하여 테마를 제공해야 합니다. defaultTheme을 사용할 수 있습니다."
+          usage={defaultUsage}
+          tsInterface={themeInterface}
+        >
+          <ThemeProvider theme={defaultTheme}>
+            <TextInput
+              value={store.state.value}
+              onChange={value => {
+                store.set({ value });
+              }}
+              label="Label"
+            />
+          </ThemeProvider>
+        </Documentation>
+        <DefaultThemePreview />
+      </>
     ))
   )
   .add(

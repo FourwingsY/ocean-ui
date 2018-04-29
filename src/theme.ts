@@ -10,7 +10,7 @@ const background = {
 
 const text = {
   default: 'hsl(0, 0%, 25%)',
-  placeholder: 'hsl(210, 5%, 70%)',
+  placeholder: 'hsl(210, 0%, 70%)',
 };
 
 const border = {
