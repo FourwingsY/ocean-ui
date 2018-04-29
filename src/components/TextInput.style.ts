@@ -19,7 +19,7 @@ export const StyledTextInput = styled.div`
   padding-top: 14px;
   font-size: ${props => props.theme.fontSize.default};
   text-align: left;
-  border-bottom: 1px solid ${props => props.theme.color.highlight};
+  border-bottom: 1px solid ${props => props.theme.color.main};
   & .text-input-control {
     display: flex;
     position: relative;

@@ -7,9 +7,6 @@ import { defaultTheme } from '../theme';
 
 import D2CodingWoff2 from '../../assets/fonts/d2coding-ligature.woff2';
 
-// set global style
-import './style';
-
 interface Props {
   name: string;
   description?: string | ReactNode;

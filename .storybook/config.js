@@ -4,6 +4,7 @@ import { Settings } from 'luxon';
 
 function loadStories() {
   require('../src/stories/style');
+  require('../src/stories/Theme');
   require('../src/stories/TextInput');
   require('../src/stories/TagsInput');
   require('../src/stories/Dropdown');
