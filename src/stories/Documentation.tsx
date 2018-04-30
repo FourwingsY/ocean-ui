@@ -1,6 +1,7 @@
 import React, { Component, ReactNode } from 'react';
 import { ThemeProvider } from 'styled-components';
-import Highlight from 'react-highlight';
+import SyntaxHighlighter from 'react-syntax-highlighter/prism';
+import { okaidia } from 'react-syntax-highlighter/styles/prism';
 
 import { StyledDocumentation } from './Documentation.style';
 import { defaultTheme } from '../theme';
@@ -41,13 +42,17 @@ export default class Documentation extends Component<Props> {
           {usage && (
             <>
               <h3>Usage</h3>
-              <Highlight className="javascript">{usage}</Highlight>
+              <SyntaxHighlighter language="jsx" style={okaidia}>
+                {usage}
+              </SyntaxHighlighter>
             </>
           )}
           {tsInterface && (
             <>
               <h3>Props interface (Typescript)</h3>
-              <Highlight className="typescript">{tsInterface}</Highlight>
+              <SyntaxHighlighter language="typescript" style={okaidia}>
+                {tsInterface}
+              </SyntaxHighlighter>
             </>
           )}
         </div>

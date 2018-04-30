@@ -30,11 +30,4 @@ export const StyledDocumentation = styled.div`
     margin-left: 10px;
     margin-bottom: 10px;
   }
-  pre {
-    margin: 10px;
-    margin-bottom: 20px;
-    & code {
-      padding: 20px;
-    }
-  }
 `;
