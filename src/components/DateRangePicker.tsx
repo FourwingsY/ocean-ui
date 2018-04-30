@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { DateTime } from 'luxon';
 
-// import { PrimaryButton, SecondaryButton } from '@src/styles/buttons';
+import { PrimaryButton, SecondaryButton } from './Buttons';
 import Calendar from './Calendar';
 import TextInput from './TextInput';
 import If from './If';
@@ -248,11 +248,11 @@ class DateRangePicker extends Component<Props, State> {
               errorMessage={errorMessages.endDate}
             />
           </div>
+          <p className="buttons">
+            <SecondaryButton onClick={this.close}>취소</SecondaryButton>
+            <PrimaryButton onClick={this.apply}>설정</PrimaryButton>
+          </p>
         </If>
-        <p className="buttons">
-          <button onClick={this.close}>취소</button>
-          <button onClick={this.apply}>설정</button>
-        </p>
       </StyledDateRangePicker>
     );
   }
