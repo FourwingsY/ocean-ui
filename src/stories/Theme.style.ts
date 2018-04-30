@@ -16,13 +16,13 @@ export const StyledDefaultThemePreview = styled.div`
   }
 `;
 export const StyledColorChip = styled.div`
-  width: 150px;
-  border: 1px solid #ccc;
-  margin: 5px;
+  width: 200px;
+  margin: 10px 5px;
   text-align: center;
   & > div {
     width: 150px;
     height: 150px;
+    margin: 0 auto;
     border: 1px solid #eee;
     box-sizing: border-box;
   }

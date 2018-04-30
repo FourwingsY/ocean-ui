@@ -34,45 +34,38 @@ class DefaultThemePreview extends Component {
       <StyledDefaultThemePreview>
         <h2>Colors</h2>
         <ul className="colors">
-          <li>
-            <ColorChip name="color.main" color={color.main} />
-          </li>
-          <li>
-            <ColorChip name="color.warn" color={color.warn} />
-          </li>
-          <li>
-            <ColorChip name="background.white" color={background.white} />
-          </li>
-          <li>
-            <ColorChip name="background.hover" color={background.hover} />
-          </li>
-          <li>
-            <ColorChip name="border.strong" color={border.strong} />
-          </li>
-          <li>
-            <ColorChip name="border.weak" color={border.weak} />
-          </li>
-          <li>
-            <ColorChip name="text.default" color={text.default} />
-          </li>
-          <li>
-            <ColorChip name="text.placeholder" color={text.placeholder} />
-          </li>
+          {Object.keys(color).map(key => (
+            <li key={key}>
+              <ColorChip name={`color.${key}`} color={color[key]} />
+            </li>
+          ))}
+          <br />
+          {Object.keys(background).map(key => (
+            <li key={key}>
+              <ColorChip name={`background.${key}`} color={background[key]} />
+            </li>
+          ))}
+          <br />
+          {Object.keys(border).map(key => (
+            <li key={key}>
+              <ColorChip name={`border.${key}`} color={border[key]} />
+            </li>
+          ))}
+          <br />
+          {Object.keys(text).map(key => (
+            <li key={key}>
+              <ColorChip name={`text.${key}`} color={text[key]} />
+            </li>
+          ))}
         </ul>
         <h2>Sizes</h2>
         <ul className="sizes">
-          <li>
-            <b>fontSize.large</b>
-            <span>{fontSize.large}</span>
-          </li>
-          <li>
-            <b>fontSize.default</b>
-            <span>{fontSize.default}</span>
-          </li>
-          <li>
-            <b>fontSize.small</b>
-            <span>{fontSize.small}</span>
-          </li>
+          {Object.keys(fontSize).map(key => (
+            <li key={key}>
+              <b>{`fontSize.${key}`}</b>
+              <span>{fontSize[key]}</span>
+            </li>
+          ))}
         </ul>
       </StyledDefaultThemePreview>
     );
@@ -111,14 +104,14 @@ const customUsage = `\
 `;
 
 const themeInterface = `\
-{  
+interface ThemeProviderProps {  
   theme: {
     color: {
       main: ColorInString; // like 'red' or
       warn: ColorInString; // like 'hsl(0, 100%, 50%)';
     },
     background: {
-      white: ColorInString;
+      default: ColorInString;
       hover: ColorInString;
     },
     text: {
