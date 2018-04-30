@@ -20,17 +20,6 @@ export default class Documentation extends Component<Props> {
     const { name, description, usage, tsInterface, children } = this.props;
     return (
       <StyledDocumentation>
-        <style>{`
-          @font-face {
-            font-family: 'D2Coding';
-            font-weight: 400;
-            src: url('${D2CodingWoff2}') format('woff2');
-          }
-      
-          body {
-            font-family: D2Coding;
-          }
-        `}</style>
         <header>
           <h1>{name}</h1>
           <h2>{description}</h2>
