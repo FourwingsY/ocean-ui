@@ -17,9 +17,9 @@ export const StyledTextInput = styled.div`
   display: inline-block;
   width: 100%;
   padding-top: 14px;
-  font-size: ${props => props.theme.fontSize.default};
+  font-size: ${props => props.theme.inputWrapper.fontSize};
   text-align: left;
-  border-bottom: 1px solid ${props => props.theme.color.main};
+  border-bottom: 1px solid ${props => props.theme.inputWrapper.focusBorderColor};
   & .text-input-control {
     display: flex;
     position: relative;
@@ -34,9 +34,9 @@ export const StyledTextInput = styled.div`
     }
   }
   &.empty {
-    border-color: ${props => props.theme.border.strong};
+    border-color: ${props => props.theme.inputWrapper.emptyBorderColor};
   }
   &.error {
-    border-color: ${props => props.theme.color.warn};
+    border-color: ${props => props.theme.inputWrapper.errorBorderColor};
   }
 `;

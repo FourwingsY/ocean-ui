@@ -1,22 +1,21 @@
-import styled, { css } from 'styled-components';
+import styled, { css, ThemeProps } from 'styled-components';
 import { convert } from 'css-color-function';
 
 const cell = {
   width: '34px',
   height: '28px',
-  radius: '10px',
 };
 
 /* Layout */
 export const StyledCalendar = styled.div`
   position: relative;
-  width: calc(${cell.width} * 7);
+  width: calc(${props => props.theme.calendar.cellWidth} * 7);
   padding: 15px;
   background: white;
   border: 1px solid ${props => props.theme.border.weak};
   border-radius: 4px;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
-  color: #434343;
+  box-shadow: ${props => props.theme.shadow.layer};
+  color: ${props => props.theme.text.default};
   text-align: center;
 `;
 
@@ -25,15 +24,15 @@ export const Navigator = styled.div`
   padding: 12px 0;
   text-align: center;
   & button {
-    background: none;
-    border: 0;
-    cursor: pointer;
+    top: 50%;
+    transform: translateY(-50%);
     min-width: 40px;
     height: 34px;
     vertical-align: middle;
-    color: #bbb;
-    top: 50%;
-    transform: translateY(-50%);
+    background: none;
+    border: 0;
+    color: ${props => props.theme.text.default};
+    cursor: pointer;
   }
   & .Select-input input {
     height: auto;
@@ -73,7 +72,7 @@ export const DateSelector = styled.div`
 `;
 
 export const DateSelectorHeader = styled.div`
-  background: #f3f6f8;
+  background: ${props => props.theme.calendar.headerBackground};
   border-radius: 5px;
   margin-bottom: 5px;
   & span {
@@ -99,13 +98,14 @@ const today = css`
     display: block;
     width: 20px;
     height: 3px;
-    background: #8cc054;
+    background: ${props => props.theme.calendar.todayColor};
     z-index: 1;
   }
 `;
 
-const getDateColor = (props: DateCellProps) => {
-  const baseColor = props.sun ? '#f66e73' : '#434343';
+const getDateColor = (props: DateCellProps & ThemeProps<any>) => {
+  const { weekdayColor, sundayColor } = props.theme.calendar;
+  const baseColor = props.sun ? sundayColor : weekdayColor;
   const opacity = props.n ? 0.5 : 1;
   return convert(`color(${baseColor} a(${opacity}))`);
 };

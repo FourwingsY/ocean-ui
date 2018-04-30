@@ -27,14 +27,11 @@ interface PickerCellProps extends DateCellProps {
 }
 
 const selected = css`
-  background: #e9f2fb;
+  background: ${props => props.theme.calendar.selected};
 `;
 
 const expected = css`
-  background: #d2e3f4;
-  &:hover {
-    background: #d2e3f4;
-  }
+  background: ${props => props.theme.calendar.expected};
 `;
 
 const rangeStart = css`

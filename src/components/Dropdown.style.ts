@@ -39,8 +39,8 @@ export const ToggleArrow = styled.button`
     display: inline-block;
     border-width: 5px 5px 3px 5px;
     border-style: solid;
-    border-color: ${props => props.theme.border.strong} transparent transparent
-      transparent;
+    border-color: ${props => props.theme.dropdownArrow.color} transparent
+      transparent transparent;
     ${(props: ArrowProps) => (props.opened ? rotateArrow : '')};
   }
 `;
@@ -49,7 +49,7 @@ export const Menu = styled.div`
   position: absolute;
   width: 100%;
   max-height: 200px;
-  border: 1px solid ${props => props.theme.border.weak};
+  border: 1px solid ${props => props.theme.dropdownMenu.borderColor};
   box-sizing: border-box;
   background: white;
   overflow-y: scroll;
@@ -59,28 +59,29 @@ export const Menu = styled.div`
   & .no-valid-option {
     display: block;
     padding: 8px 5px;
-    font-size: ${props => props.theme.fontSize.small};
-    color: ${props => props.theme.text.placeholder};
+    font-size: ${props => props.theme.dropdownMenu.noValidOptionFontSize};
+    color: ${props => props.theme.dropdownMenu.noValidOptionColor};
   }
 `;
 
 export const Option = styled.div`
   padding: 8px 5px;
   &.focused {
-    background: ${props => props.theme.background.hover};
+    background: ${props => props.theme.dropdownOption.focusedBackground};
   }
   &.disabled {
-    color: ${props => props.theme.text.placeholder};
+    color: ${props => props.theme.dropdownOption.disabledColor};
+    background: ${props => props.theme.dropdownOption.disabledBackground};
     cursor: default;
   }
 `;
 
 /* Depends on Status */
 const onFocused = css`
-  border-bottom: 1px solid ${props => props.theme.color.main};
+  border-bottom: 1px solid ${props => props.theme.dropdown.focusBorderColor};
   ${ToggleArrow}::before {
-    border-color: ${props => props.theme.color.main} transparent transparent
-      transparent;
+    border-color: ${props => props.theme.dropdownArrow.focusedColor} transparent
+      transparent transparent;
   }
 `;
 
@@ -106,7 +107,7 @@ export const StyledDropdown = styled.div`
   display: inline-block;
   width: 100%;
   padding-top: 14px;
-  border-bottom: 1px solid ${props => props.theme.border.strong};
+  border-bottom: 1px solid ${props => props.theme.dropdown.emptyBorderColor};
   ${(props: DropdownProps) => (props.focused ? onFocused : '')};
   ${(props: DropdownProps) => (props.hasValue ? hasValue : '')};
 `;

@@ -1,12 +1,11 @@
 import styled, { css } from 'styled-components';
-import { convert } from 'css-color-function';
 
 const placeholderStyle = css`
   bottom: 0;
   left: 5px;
-  font-size: ${props => props.theme.fontSize.default};
+  font-size: ${props => props.theme.inputPlaceholder.fontSize};
   line-height: 30px;
-  color: ${props => props.theme.text.placeholder};
+  color: ${props => props.theme.inputPlaceholder.color};
   cursor: text;
 `;
 
@@ -19,7 +18,7 @@ export const Label = styled.span`
   left: 0;
   font-size: 11px;
   line-height: 14px;
-  color: ${props => props.theme.color.main};
+  color: ${props => props.theme.inputLabel.color};
   transition: bottom 0.2s linear, left 0.2s linear, line-height 0.2s linear,
     color 0.2s, font-size 0.1s;
   pointer-events: none;
@@ -32,7 +31,7 @@ export const ClearButton = styled.button`
   cursor: pointer;
   &:focus,
   &:hover {
-    color: ${props => props.theme.color.warn};
+    color: ${props => props.theme.inputClearButton.color};
   }
 `;
 
@@ -45,7 +44,7 @@ export const ErrorMessage = styled.div`
   margin: 1px 3px 0;
   font-size: 11px;
   line-height: normal;
-  color: ${props => props.theme.color.warn};
-  background: ${props => convert(`color(${props.theme.color.warn} a(0.1))`)};
+  color: ${props => props.theme.inputErrorMessage.color};
+  background: ${props => props.theme.inputErrorMessage.background};
   border-radius: 3px;
 `;

@@ -14,7 +14,7 @@ interface PickerCellProps extends DateCellProps {
 }
 
 const selected = css`
-  background: #e9f2fb;
+  background: ${props => props.theme.calendar.selected};
 `;
 
 export const PickerCell = DateCell.extend`

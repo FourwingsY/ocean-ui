@@ -23,47 +23,47 @@ const NormalButton = Button.extend`
 `;
 
 export const PrimaryButton = NormalButton.extend`
-  color: ${props => props.theme.primary.text};
-  border: 1px solid ${props => props.theme.primary.border};
-  background: ${props => props.theme.primary.bg};
+  color: ${props => props.theme.primaryButton.text};
+  border: 1px solid ${props => props.theme.primaryButton.border};
+  background: ${props => props.theme.primaryButton.bg};
   &:hover {
-    background: ${props => props.theme.primary.bg_hover};
+    background: ${props => props.theme.primaryButton.bg_hover};
   }
 `;
 
 export const SecondaryButton = NormalButton.extend`
-  color: ${props => props.theme.secondary.text};
-  border: 1px solid ${props => props.theme.secondary.border};
-  background: ${props => props.theme.secondary.bg};
+  color: ${props => props.theme.secondaryButton.text};
+  border: 1px solid ${props => props.theme.secondaryButton.border};
+  background: ${props => props.theme.secondaryButton.bg};
   &:hover {
-    background: ${props => props.theme.secondary.bg_hover};
+    background: ${props => props.theme.secondaryButton.bg_hover};
   }
 `;
 
 export const TertiaryButton = NormalButton.extend`
-  color: ${props => props.theme.tertiary.text};
-  border: 1px solid ${props => props.theme.tertiary.border};
-  background: ${props => props.theme.tertiary.bg};
+  color: ${props => props.theme.tertiaryButton.text};
+  border: 1px solid ${props => props.theme.tertiaryButton.border};
+  background: ${props => props.theme.tertiaryButton.bg};
   &:hover {
-    background: ${props => props.theme.tertiary.bg_hover};
+    background: ${props => props.theme.tertiaryButton.bg_hover};
   }
 `;
 
 export const WarnButton = NormalButton.extend`
-  color: ${props => props.theme.warn.text};
-  border: 1px solid ${props => props.theme.warn.border};
-  background: ${props => props.theme.warn.bg};
+  color: ${props => props.theme.warnButton.text};
+  border: 1px solid ${props => props.theme.warnButton.border};
+  background: ${props => props.theme.warnButton.bg};
   &:hover {
-    background: ${props => props.theme.warn.bg_hover};
+    background: ${props => props.theme.warnButton.bg_hover};
   }
 `;
 
 export const CancelButton = NormalButton.extend`
-  color: ${props => props.theme.cancel.text};
-  border: 1px solid ${props => props.theme.cancel.border};
-  background: ${props => props.theme.cancel.bg};
+  color: ${props => props.theme.cancelButton.text};
+  border: 1px solid ${props => props.theme.cancelButton.border};
+  background: ${props => props.theme.cancelButton.bg};
   &:hover {
-    background: ${props => props.theme.cancel.bg_hover};
+    background: ${props => props.theme.cancelButton.bg_hover};
   }
 `;
 
