@@ -6,6 +6,8 @@ import Calendar from './components/Calendar';
 import DatePicker from './components/DatePicker';
 import DateRangePicker from './components/DateRangePicker';
 
+import { defaultTheme } from './theme';
+
 export {
   TextInput,
   TagsInput,
@@ -15,3 +17,5 @@ export {
   DatePicker,
   DateRangePicker,
 };
+
+export { defaultTheme };

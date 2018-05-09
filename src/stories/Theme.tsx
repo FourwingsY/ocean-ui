@@ -75,12 +75,21 @@ const defaultUsage = `\
   import { defaultTheme } from 'ocean-ui';
 
   <ThemeProvider theme={defaultTheme}>
-    <TextInput
-      value={value}
-      onChange={this.onChange}
-      label="Label"
-    />
+    <YourApp />
   </ThemeProvider>
+
+  // on YourApp
+  render() {
+    return (
+      ...
+      <TextInput
+        value={value}
+        onChange={this.onChange}
+        label="Label"
+      />
+      ...
+    )
+  }
 `;
 
 const customUsage = `\
@@ -94,13 +103,24 @@ const customUsage = `\
     }
   };
 
-  <ThemeProvider theme={theme}>
-    <TextInput
-      value={value}
-      onChange={this.onChange}
-      label="Label"
-    />
+  // 전체 테마를 덮어쓰려면 여기에서,
+  <ThemeProvider theme={defaultTheme}>
+    <YourApp />
   </ThemeProvider>
+
+  // on YourApp
+  render() {
+    // 일부 지역적인 테마를 덮어쓰려면 여기에서 ThemeProvider를 사용합니다.
+    return (
+      <ThemeProvider theme={theme}>
+        <TextInput
+          value={value}
+          onChange={this.onChange}
+          label="Label"
+        />
+      </ThemeProvider>
+    )
+  }
 `;
 
 const themeInterface = `\
@@ -134,35 +154,33 @@ interface ThemeProviderProps {
 
 storiesOf('Guide', module)
   .add(
-    'default theme',
+    'How to use theme',
     withState({ value: '' }, store => (
       <>
         <Documentation
-          name="Use ThemeProvider"
+          name="How to use theme"
           description="ThemeProvider 컴포넌트를 사용하여 테마를 제공해야 합니다. defaultTheme을 사용할 수 있습니다."
           usage={defaultUsage}
           tsInterface={themeInterface}
         >
-          <ThemeProvider theme={defaultTheme}>
-            <TextInput
-              value={store.state.value}
-              onChange={value => {
-                store.set({ value });
-              }}
-              label="Label"
-            />
-          </ThemeProvider>
+          <TextInput
+            value={store.state.value}
+            onChange={value => {
+              store.set({ value });
+            }}
+            label="Label"
+          />
         </Documentation>
         <DefaultThemePreview />
       </>
     ))
   )
   .add(
-    'custom theme',
+    'How to use Custom theme',
     withState({ value: '' }, store => (
       <Documentation
-        name="Use ThemeProvider with custom theme"
-        description="커스텀 테마를 사용하여 테마를 덮어쓸 수 있습니다"
+        name="How to use Custom theme"
+        description="커스텀 테마를 사용하여 전체 테마 혹은 일부 컴포넌트의 테마를 덮어쓸 수 있습니다"
         usage={customUsage}
         tsInterface={themeInterface}
       >

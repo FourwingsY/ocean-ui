@@ -97,9 +97,11 @@ export const extendsInputTheme = (theme: ExtendedTheme) => {
     },
     inputLabel: {
       color: color.main,
+      fontSize: fontSize.small,
     },
     inputClearButton: {
-      color: color.warn,
+      color: text.default,
+      hoverColor: color.warn,
     },
     inputErrorMessage: {
       color: color.warn,

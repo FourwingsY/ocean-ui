@@ -10,6 +10,7 @@ export const Input = styled.input`
   border: 0;
   background: none;
   box-sizing: border-box;
+  outline: none;
 `;
 
 export const StyledTextInput = styled.div`

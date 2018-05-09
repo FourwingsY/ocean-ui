@@ -34,6 +34,34 @@ const usage = `\
   />
 `;
 
+const themeUsage = `\
+  const { color, text, fontSize, border } = defaultTheme
+  const theme = {
+    inputPlaceholder: {
+      color: text.placeholder,
+      fontSize: fontSize.default,
+    },
+    inputLabel: {
+      color: color.main,
+      fontSize: fontSize.small,
+    },
+    inputClearButton: {
+      color: text.default,
+      hoverColor: color.warn,
+    },
+    inputErrorMessage: {
+      color: color.warn,
+      background: \`color(\${color.warn} a(0.1))\`,
+    },
+    inputWrapper: {
+      fontSize: fontSize.default,
+      emptyBorderColor: border.strong,
+      errorBorderColor: color.warn,
+      focusBorderColor: color.main,
+    },
+  }
+`;
+
 storiesOf('String/TextInput', module)
   .addDecorator(withKnobs)
   .add(
@@ -44,6 +72,7 @@ storiesOf('String/TextInput', module)
         description="Text 입력을 받는 컴포넌트."
         usage={usage}
         tsInterface={TextInputProps}
+        themeUsage={themeUsage}
       >
         <TextInput
           value={store.state.value}

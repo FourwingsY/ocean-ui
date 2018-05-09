@@ -16,22 +16,23 @@ export const Label = styled.span`
   position: absolute;
   bottom: 100%;
   left: 0;
-  font-size: 11px;
+  font-size: ${props => props.theme.inputLabel.fontSize};
   line-height: 14px;
   color: ${props => props.theme.inputLabel.color};
-  transition: bottom 0.2s linear, left 0.2s linear, line-height 0.2s linear,
-    color 0.2s, font-size 0.1s;
+  transition: bottom 0.2s, left 0.2s, line-height 0.2s, color 0.2s,
+    font-size 0.1s;
   pointer-events: none;
   ${(props: LabelProps) => (props.asPlaceholder ? placeholderStyle : '')};
 `;
 
 export const ClearButton = styled.button`
+  color: ${props => props.theme.inputClearButton.color};
   background: none;
   border: 0;
   cursor: pointer;
   &:focus,
   &:hover {
-    color: ${props => props.theme.inputClearButton.color};
+    color: ${props => props.theme.inputClearButton.hoverColor};
   }
 `;
 

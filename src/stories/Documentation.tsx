@@ -6,18 +6,24 @@ import { okaidia } from 'react-syntax-highlighter/styles/prism';
 import { StyledDocumentation } from './Documentation.style';
 import { defaultTheme } from '../theme';
 
-import D2CodingWoff2 from '../../assets/fonts/d2coding-ligature.woff2';
-
 interface Props {
   name: string;
   description?: string | ReactNode;
   usage?: string;
   tsInterface?: string;
+  themeUsage?: string;
 }
 
 export default class Documentation extends Component<Props> {
   render() {
-    const { name, description, usage, tsInterface, children } = this.props;
+    const {
+      name,
+      description,
+      usage,
+      tsInterface,
+      themeUsage,
+      children,
+    } = this.props;
     return (
       <StyledDocumentation>
         <header>
@@ -41,6 +47,14 @@ export default class Documentation extends Component<Props> {
               <h3>Props interface (Typescript)</h3>
               <SyntaxHighlighter language="typescript" style={okaidia}>
                 {tsInterface}
+              </SyntaxHighlighter>
+            </>
+          )}
+          {themeUsage && (
+            <>
+              <h3>Theme</h3>
+              <SyntaxHighlighter language="typescript" style={okaidia}>
+                {themeUsage}
               </SyntaxHighlighter>
             </>
           )}
